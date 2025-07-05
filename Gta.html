@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="Screenshot (35).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Screenshot (35).png" alt="image" height="50px">
+            <h1>GameZone</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Trending</a></li>
+        </ul>
+    </nav>
+    <div class="gameinfo">
+        <img src="">
+    </div>
+    <div class="review-section">
+        <h2> GTA V </h2>
+        <img src="images (8).png" alt="Image">
+        <p> Description:Grand Theft Auto V (GTA V) is an open-world action-adventure game set in the sprawling city of Los Santos. Players control three distinct characters—Michael, Franklin, and Trevor—each with their own storylines and skills. The game features a rich, immersive world where you can engage in missions, explore diverse environments, and participate in various activities like heists, races, and side quests. With its detailed graphics, expansive gameplay, and deep narrative, GTA V offers a dynamic and thrilling experience in both single-player and the expansive online multiplayer mode, GTA Online.
+        </p>
+        <h2>Reviews & Ratings</h2>
+        <div id="reviews">
+            <!-- Reviews will be dynamically loaded here -->
+        </div>
+        <h3>Leave a Review</h3>
+        <form id="reviewForm">
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+            <br>
+            <label for="reviewText">Your Review:</label><br>
+            <textarea id="reviewText" rows="4" cols="50"></textarea><br>
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 GameZone. All rights reserved.</p>
+        <div class="policies">
+            <a href="www.google.com">Terms and Conditions</a>
+            <a href="www.google.com">Privacy policy</a>
+            <a href="www.google.com">Privacy settings</a>
+            <a href="www.google.com">Cookie policy</a>
+        </div>
+        <div>
+            <img src="Screenshot (34).jpg" alt="Image" height="50px" width="300px">
+        </div>
+    </footer>    
+    <script src="script.js"></script>
+</body>
+</html>

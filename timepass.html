@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Forum</title>
+  <style>
+    .navbar {
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+}
+
+.navbar .logo h1 {
+    font-size: 24px;
+    color: #e50914;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 10px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #e50914;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #d40812;
+}
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #add8e6; /* Light blue background */
+      color: #333;
+      margin: 20px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .post {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    .post strong {
+      color: #007bff;
+    }
+
+    .post p {
+      margin: 5px 0 0 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Screenshot (35).png" alt="image" height="50px">
+            <h1>GameZone</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Trending</a></li>
+        </ul>
+    </nav>
+  <h1>Simple Forum</h1>
+  <form id="forumForm">
+    <input type="text" id="nameInput" placeholder="Your Name" required>
+    <textarea id="messageInput" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Post Message</button>
+  </form>
+
+  <h2>Forum Posts</h2>
+  <div id="postsContainer"></div>
+
+  <script>
+    document.getElementById('forumForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting traditionally
+
+      const nameInput = document.getElementById('nameInput').value;
+      const messageInput = document.getElementById('messageInput').value;
+
+      // Create a new div for the post
+      const postDiv = document.createElement('div');
+      postDiv.className = 'post';
+      postDiv.innerHTML = `<strong>${nameInput}</strong><br><p>${messageInput}</p>`;
+
+      // Append the new post to the posts container
+      document.getElementById('postsContainer').appendChild(postDiv);
+
+      // Clear the input fields
+      document.getElementById('nameInput').value = '';
+      document.getElementById('messageInput').value = '';
+    });
+  </script>
+</body>
+</html>
